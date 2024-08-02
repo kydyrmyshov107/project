@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <LayoutContainer>
       <Header />
-      <main>main</main>
+      <Main>main</Main>
       <Footer />
     </LayoutContainer>
   );
@@ -20,6 +20,10 @@ const LayoutContainer = styled.div`
   footer {
     margin-top: auto;
   }
+`;
+
+const Main = styled.main`
+  background: #f7f9fb;
 `;
 
 export default Layout;
