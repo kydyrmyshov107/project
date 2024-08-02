@@ -1,29 +1,34 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Box, styled } from "@mui/material";
 import Header from "./Header";
 import Footer from "./Footer";
-import styled from "styled-components";
+import Home from "../pages/home/Home";
+
 const Layout = () => {
   return (
     <LayoutContainer>
       <Header />
-      <Main>main</Main>
+      <Main>
+        <Home />
+      </Main>
       <Footer />
     </LayoutContainer>
   );
 };
 
-const LayoutContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+const LayoutContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  minHeight: "100vh",
+  backgroundColor: theme.palette.background.default,
+  footer: {
+    marginTop: "auto",
+  },
+}));
 
-  footer {
-    margin-top: auto;
-  }
-`;
-
-const Main = styled.main`
-  background: #f7f9fb;
-`;
+const Main = styled("main")(({ theme }) => ({
+  background: "#f7f9fb",
+}));
 
 export default Layout;
