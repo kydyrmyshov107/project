@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box, styled } from "@mui/material";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -27,8 +26,9 @@ const LayoutContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Main = styled("main")(({ theme }) => ({
-  background: "#f7f9fb",
+  background: "#f7f9fb", // Фиксированный цвет
 }));
 
 export default Layout;

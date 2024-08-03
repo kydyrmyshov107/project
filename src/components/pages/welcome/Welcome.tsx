@@ -4,7 +4,6 @@ const Welcome = () => {
   return <StyledContainer>Welcome</StyledContainer>;
 };
 const StyledContainer = styled(Box)`
-  /* background: red; */
 `;
 
 export default Welcome;

@@ -1,5 +1,6 @@
 import { Search } from "../assets/icon";
 import styled from "styled-components";
+import { Box } from "@mui/material";
 export const InputSearch = () => {
   return (
     <Input>
@@ -9,7 +10,7 @@ export const InputSearch = () => {
   );
 };
 
-const Input = styled.div`
+const Input = styled(Box)`
   display: flex;
   align-items: center;
   gap: 6px;

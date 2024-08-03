@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import styled from "styled-components";
 import {
   Call,
@@ -11,73 +12,48 @@ import {
 import { InputSearch } from "../../ui/InputSearch";
 
 const arr = [
-  {
-    text: "О компании",
-  },
-  {
-    text: "Производители ",
-  },
-  {
-    text: "Доставка ",
-  },
-  {
-    text: "Оплата",
-  },
-  {
-    text: "Новости ",
-  },
-  {
-    text: "Реквизиты ",
-  },
-  {
-    text: "Контакты ",
-  },
+  { text: "О компании" },
+  { text: "Производители" },
+  { text: "Доставка" },
+  { text: "Оплата" },
+  { text: "Новости" },
+  { text: "Реквизиты" },
+  { text: "Контакты" },
 ];
 
 const capble = [
-  {
-    icon: <Line />,
-    title: "Сравнения",
-  },
-  {
-    icon: <ShoppingCart />,
-    title: "Корзина",
-  },
-  {
-    icon: <User />,
-    title: "Личный кабинет",
-  },
+  { icon: <Line />, title: "Сравнения" },
+  { icon: <ShoppingCart />, title: "Корзина" },
+  { icon: <User />, title: "Личный кабинет" },
 ];
 
 const Header = () => {
   return (
     <SideBar>
       <HeaderSup>
-        <div className="start">
+        <Box className="start">
           <Heart />
           <p>boksmed</p>
-        </div>
+        </Box>
 
-        <div className="lines">
+        <Box className="lines">
           <input type="text" />
           <label className="toggle">
-            <div id="bar1" className="bars"></div>
-            <div id="bar2" className="bars"></div>
-            <div id="bar3" className="bars"></div>
+            <Box id="bar1" className="bars" />
+            <Box id="bar2" className="bars" />
+            <Box id="bar3" className="bars" />
           </label>
           <p>КАТАЛОГ</p>
-        </div>
+        </Box>
 
-        <>
-          <InputSearch />
-        </>
+        <InputSearch />
 
-        <div className="word">
-          <p> Заказать обратный звонок</p>
-        </div>
-        <div className="last">
+        <Box className="word">
+          <p>Заказать обратный звонок</p>
+        </Box>
+        <Box className="last">
           <p>8 (3412) 65-08-77</p>
-          <div className="clicks">
+          <Box className="clicks">
             <button>
               <WhatApp />
             </button>
@@ -87,38 +63,38 @@ const Header = () => {
             <button>
               <Call />
             </button>
-          </div>
-        </div>
+          </Box>
+        </Box>
       </HeaderSup>
       <SupHeader>
-        <div className="words">
+        <Box className="words">
           {arr.map((item) => (
-            <div>
+            <Box key={item.text}>
               <p>{item.text}</p>
-            </div>
+            </Box>
           ))}
-        </div>
-        <div className="end">
+        </Box>
+        <Box className="end">
           {capble.map((el) => (
-            <div className="two">
+            <Box className="two" key={el.title}>
               <button>{el.icon}</button>
               <p>{el.title}</p>
-            </div>
+            </Box>
           ))}
-        </div>
+        </Box>
       </SupHeader>
     </SideBar>
   );
 };
 
-const SideBar = styled.div`
+const SideBar = styled(Box)`
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px 0;
 `;
 
-const HeaderSup = styled.header`
+const HeaderSup = styled(Box)`
   width: 100%;
   max-width: 1380px;
   margin-inline: auto;
@@ -127,7 +103,7 @@ const HeaderSup = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  div.start {
+  .start {
     display: flex;
     align-items: center;
     gap: 3px;
@@ -142,7 +118,7 @@ const HeaderSup = styled.header`
     }
   }
 
-  div.lines {
+  .lines {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -157,7 +133,6 @@ const HeaderSup = styled.header`
       cursor: pointer;
       display: flex;
       flex-direction: column-reverse;
-
       align-items: flex-start;
       justify-content: center;
       gap: 6px;
@@ -179,33 +154,28 @@ const HeaderSup = styled.header`
       width: 55%;
     }
 
-    #bar2 {
-      /* width: 75%; */
-    }
     p {
       color: rgb(17, 17, 17);
-      font-size: 15xpx;
+      font-size: 15px;
       font-weight: 400;
       line-height: 18px;
-      letter-spacing: 0%;
       text-align: left;
     }
   }
 
-  div.word {
+  .word {
     p {
       color: rgb(50, 87, 164);
       font-size: 17px;
       font-weight: 400;
       line-height: 18px;
-      letter-spacing: 0%;
       text-align: left;
       text-decoration-line: underline;
       cursor: pointer;
     }
   }
 
-  div.last {
+  .last {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -214,10 +184,9 @@ const HeaderSup = styled.header`
       font-size: 16px;
       font-weight: 400;
       line-height: 18px;
-      letter-spacing: 0%;
       text-align: left;
     }
-    div.clicks {
+    .clicks {
       display: flex;
       align-items: center;
       gap: 5px;
@@ -236,7 +205,7 @@ const HeaderSup = styled.header`
   }
 `;
 
-const SupHeader = styled.div`
+const SupHeader = styled(Box)`
   width: 100%;
   max-width: 1380px;
   margin-inline: auto;
@@ -245,7 +214,7 @@ const SupHeader = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  div.words {
+  .words {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -254,17 +223,16 @@ const SupHeader = styled.div`
       font-size: 16px;
       font-weight: 400;
       line-height: 18px;
-      letter-spacing: 0%;
       text-align: left;
       cursor: pointer;
     }
   }
 
-  div.end {
+  .end {
     display: flex;
     align-items: center;
     gap: 15px;
-    div.two {
+    .two {
       display: flex;
       justify-content: center;
       align-items: center;
