@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 import {
   Call,
@@ -33,7 +33,9 @@ const Header = () => {
       <HeaderSup>
         <Box className="start">
           <Heart />
-          <p>boksmed</p>
+          <Typography variant="h5" color="primary">
+            boksmed
+          </Typography>
         </Box>
 
         <Box className="lines">
@@ -43,16 +45,26 @@ const Header = () => {
             <Box id="bar2" className="bars" />
             <Box id="bar3" className="bars" />
           </label>
-          <p>КАТАЛОГ</p>
+          <Typography variant="body2" color="textPrimary">
+            КАТАЛОГ
+          </Typography>
         </Box>
 
         <InputSearch />
 
         <Box className="word">
-          <p>Заказать обратный звонок</p>
+          <Typography
+            variant="body2"
+            color="primary"
+            sx={{ textDecoration: "underline", cursor: "pointer" }}
+          >
+            Заказать обратный звонок
+          </Typography>
         </Box>
         <Box className="last">
-          <p>8 (3412) 65-08-77</p>
+          <Typography variant="body2" color="textPrimary">
+            8 (3412) 65-08-77
+          </Typography>
           <Box className="clicks">
             <button>
               <WhatApp />
@@ -70,7 +82,7 @@ const Header = () => {
         <Box className="words">
           {arr.map((item) => (
             <Box key={item.text}>
-              <p>{item.text}</p>
+              <Typography color="textPrimary">{item.text}</Typography>
             </Box>
           ))}
         </Box>
@@ -78,7 +90,7 @@ const Header = () => {
           {capble.map((el) => (
             <Box className="two" key={el.title}>
               <button>{el.icon}</button>
-              <p>{el.title}</p>
+              <Typography color="textPrimary">{el.title}</Typography>
             </Box>
           ))}
         </Box>
@@ -110,11 +122,6 @@ const HeaderSup = styled(Box)`
     svg {
       width: 27px;
       height: 23px;
-    }
-
-    p {
-      color: rgb(50, 87, 164);
-      font-size: 25px;
     }
   }
 
@@ -153,23 +160,10 @@ const HeaderSup = styled(Box)`
     #bar1 {
       width: 55%;
     }
-
-    p {
-      color: rgb(17, 17, 17);
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 18px;
-      text-align: left;
-    }
   }
 
   .word {
-    p {
-      color: rgb(50, 87, 164);
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 18px;
-      text-align: left;
+    .MuiTypography-root {
       text-decoration-line: underline;
       cursor: pointer;
     }
@@ -179,13 +173,6 @@ const HeaderSup = styled(Box)`
     display: flex;
     align-items: center;
     gap: 30px;
-    p {
-      color: rgb(17, 17, 17);
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 18px;
-      text-align: left;
-    }
     .clicks {
       display: flex;
       align-items: center;
@@ -218,14 +205,6 @@ const SupHeader = styled(Box)`
     display: flex;
     align-items: center;
     gap: 30px;
-    p {
-      color: rgb(17, 17, 17);
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 18px;
-      text-align: left;
-      cursor: pointer;
-    }
   }
 
   .end {
