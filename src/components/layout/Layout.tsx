@@ -19,7 +19,6 @@ const LayoutContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  minHeight: "100vh",
   backgroundColor: theme.palette.background.default,
   footer: {
     marginTop: "auto",
@@ -28,7 +27,7 @@ const LayoutContainer = styled(Box)(({ theme }) => ({
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Main = styled("main")(({ theme }) => ({
-  background: "#f7f9fb", // Фиксированный цвет
+  background: "#f7f9fb",
 }));
 
 export default Layout;
